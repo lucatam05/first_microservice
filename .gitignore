@@ -1,0 +1,15 @@
+# .NET
+bin/
+obj/
+
+# IDE
+.idea/
+.vs/
+
+# OS
+.DS_Store
+
+# Docker
+**/bin/
+**/obj/
+
