@@ -1,0 +1,36 @@
+﻿version: "3.8"
+
+services:
+  db:
+    image: postgres:15
+    container_name: mio_postgres
+    environment:
+      POSTGRES_USER: mio_utente
+      POSTGRES_PASSWORD: mia_password
+      POSTGRES_DB: MioPrimoMicroservizioDb
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"   # utile in dev; rimuovi in prod
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mio_utente -d MioPrimoMicroservizioDb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build:
+      context: .
+      dockerfile: MioPrimoMicroservizio/Dockerfile
+    container_name: mio_app
+    depends_on:
+      - db
+    environment:
+      ConnectionStrings__MioPrimoMicroservizio: "Host=db;Port=5432;Database=MioPrimoMicroservizioDb;Username=mio_utente;Password=mia_password"
+      ASPNETCORE_ENVIRONMENT: Development
+    ports:
+      - "8080:8080"
+    restart: on-failure
+
+volumes:
+  pgdata:

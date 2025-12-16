@@ -1,0 +1,27 @@
+---
+# ========================
+# Service del microservizio
+# ========================
+apiVersion: v1
+kind: Service
+metadata:
+  name: mio-microservizio-service
+spec:
+  selector:
+    app: mio-microservizio
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-service
+spec:
+  type: ClusterIP
+  ports:
+    - port: 5432
+  selector:
+    app: postgres

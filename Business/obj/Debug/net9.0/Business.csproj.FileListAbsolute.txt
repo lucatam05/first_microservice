@@ -1,0 +1,17 @@
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/bin/Debug/net9.0/Business.deps.json
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/bin/Debug/net9.0/Business.dll
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/bin/Debug/net9.0/Business.pdb
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/bin/Debug/net9.0/Repository.dll
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/bin/Debug/net9.0/Shared.dll
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/bin/Debug/net9.0/Repository.pdb
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/bin/Debug/net9.0/Shared.pdb
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/obj/Debug/net9.0/Business.csproj.AssemblyReference.cache
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/obj/Debug/net9.0/Business.GeneratedMSBuildEditorConfig.editorconfig
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/obj/Debug/net9.0/Business.AssemblyInfoInputs.cache
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/obj/Debug/net9.0/Business.AssemblyInfo.cs
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/obj/Debug/net9.0/Business.csproj.CoreCompileInputs.cache
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/obj/Debug/net9.0/Business.csproj.Up2Date
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/obj/Debug/net9.0/Business.dll
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/obj/Debug/net9.0/refint/Business.dll
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/obj/Debug/net9.0/Business.pdb
+/Users/lucatamiazzo/RiderProjects/MioPrimoMicroservizio/Business/obj/Debug/net9.0/ref/Business.dll

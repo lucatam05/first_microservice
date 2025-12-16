@@ -1,0 +1,75 @@
+# ========================
+# Deployment del microservizio
+# ========================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mio-microservizio
+  labels:
+    app: mio-microservizio
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mio-microservizio
+  template:
+    metadata:
+      labels:
+        app: mio-microservizio
+    spec:
+      containers:
+        - name: mio-microservizio
+          image: mioprimomicroservizio-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+          env:
+            - name: ConnectionStrings__MioPrimoMicroservizio
+              value: "Host=postgres-service;Port=5432;Database=MioPrimoMicroservizioDb;Username=mio_utente;Password=mia_password"
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Development
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:15
+          env:
+            - name: POSTGRES_DB
+              value: MioPrimoMicroservizioDb
+            - name: POSTGRES_USER
+              value: mio_utente
+            - name: POSTGRES_PASSWORD
+              value: mia_password
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: pgdata
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: pgdata
+          persistentVolumeClaim:
+            claimName: pgdata-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pgdata-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
